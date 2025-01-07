@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+https://github.com/DanielT504/airport-distance-calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Airport Distance Calculator**
 
-## Available Scripts
+The Airport Distance Calculator is a React-based web application that allows users to calculate the distance in nautical miles between two U.S. airports. The app also plots the flying route on Google Maps and provides an intuitive, responsive interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## **Demo**
+You can access the live application [here](https://your-netlify-url.netlify.app).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## **Technologies Used**
+- **Frontend Framework**: React with TypeScript  
+- **UI Library**: Material UI  
+- **Mapping**: Google Maps API  
+- **Deployment**: Netlify  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Getting Started**
 
-### `npm run build`
+### **Prerequisites**
+- Node.js (v14+)
+- A Google Maps API key with the Maps JavaScript API enabled.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Installation**
+1. Clone the repository:
+   git clone https://github.com/your-username/airport-distance-calculator.git
+   cd airport-distance-calculator
+2. Install dependencies:
+   npm install
+3. Create a .env file in the root directory and add your Google Maps API key:
+   REACT_APP_GOOGLE_MAPS_API_KEY=your-api-key
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **Usage**
+1. Enter the name or code of a U.S. airport in the "From" field.
+2. Select an airport from the dropdown list.
+3. Repeat for the "To" field.
+4. View the calculated distance (in nautical miles) and the flying route displayed on the map.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Deployment**
+To deploy the app to [Netlify](https://www.netlify.com/):
+1. Build the project:
+   npm run build
+2. Drag and drop the build folder into the Netlify deployment interface.
+3. Add your Google Maps API key as an environment variable in Netlify.

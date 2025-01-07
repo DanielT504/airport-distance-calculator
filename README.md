@@ -7,7 +7,7 @@ The Airport Distance Calculator is a React-based web application that allows use
 ---
 
 ## **Demo**
-You can access the live application [here](https://your-netlify-url.netlify.app).
+You can access the live application [here](https://heartfelt-peony-d55fb9.netlify.app).
 
 ---
 
@@ -27,7 +27,7 @@ You can access the live application [here](https://your-netlify-url.netlify.app)
 
 ### **Installation**
 1. Clone the repository:
-   git clone https://github.com/your-username/airport-distance-calculator.git
+   git clone https://github.com/DanielT504/airport-distance-calculator.git
    cd airport-distance-calculator
 2. Install dependencies:
    npm install

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Autocomplete, TextField } from '@mui/material';
 import airportData from '../assets/airports.json';
 
-// Define the shape of airport data
+// Shape of airport data
 interface Airport {
   name: string;
   code: string;
@@ -14,58 +14,62 @@ const AirportSearch = ({
   label,
   onAirportSelect,
 }: {
-  label: string;
-  onAirportSelect: (airport: Airport | null) => void; // Allow null in case the user clears the selection
+  label: string; // Label for the autocomplete field
+  onAirportSelect: (airport: Airport | null) => void; // Callback when an airport is selected or cleared
 }) => {
-  // State with the correct type
+  // State for filtered airport options
   const [options, setOptions] = useState<Airport[]>([]);
 
+  // Handles user input changes and filters airport data
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value.toLowerCase();
-  
-    // Clear the options if the input is too short
+
+    // Clear options if the input is too short, to avoid garbage
     if (value.length <= 2) {
-      setOptions([]); // Clear results
+      setOptions([]);
       return;
     }
-  
-    // Proceed with filtering if the input is long enough
+
+    // Filter and remove duplicate airports based on input
     const filteredAirports = Object.values(airportData)
       .filter((airport: any) => {
         const airportName = airport.name || '';
         const airportCode = airport.iata || '';
+        // Match by name or IATA code
         return (
           airportName.toLowerCase().includes(value) ||
           airportCode.toLowerCase().includes(value)
         );
       })
       .reduce((unique: any[], airport: any) => {
-        // Check if the airport with the same IATA code is already in the unique list
+        // Remove duplicates based on IATA code
         if (!unique.some((a) => a.iata === airport.iata)) {
           unique.push(airport);
         }
         return unique;
       }, []);
-  
-    // Only map valid airports
+
+    // Map filtered results to Airport objects, ignoring invalid data
     const airportOptions: Airport[] = filteredAirports
-      .filter((airport: any) => airport.lat && airport.lon) // Filter out invalid airports
+      .filter((airport: any) => airport.lat && airport.lon) // Must be valid coordinates
       .map((airport: any) => ({
         name: airport.name || 'Unknown Airport',
         code: airport.iata || 'N/A',
         lat: airport.lat,
         lon: airport.lon,
       }));
-  
-    setOptions(airportOptions); // Update the options
+
+    setOptions(airportOptions); // Update autocomplete options
   };
-  
+
   return (
     <Autocomplete
-      options={options}
-      getOptionLabel={(option: Airport) => `${option.name} (${option.code})`}
-      onChange={(event, value) => onAirportSelect(value)} // Pass selected airport or null
-      renderInput={(params) => <TextField {...params} label={label} onChange={handleInputChange} />}
+      options={options} // List of filtered airports
+      getOptionLabel={(option: Airport) => `${option.name} (${option.code})`} // Display name and code
+      onChange={(event, value) => onAirportSelect(value)} // Trigger callback on selection
+      renderInput={(params) => (
+        <TextField {...params} label={label} onChange={handleInputChange} /> // Input field with label
+      )}
     />
   );
 };

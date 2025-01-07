@@ -1,0 +1,14 @@
+.map-container {
+    display: flex; /* Ensure it behaves like a flex container */
+    justify-content: center; /* Center the map horizontally */
+    align-items: center; /* Center the map vertically */
+    margin: 20px auto; /* Add some vertical margin */
+    width: 90%;
+    max-width: 800px;
+    height: 400px; /* Ensure the container has a consistent height */
+    border: 2px solid #ddd; /* Optional: Add a border for styling */
+    border-radius: 10px; /* Optional: Round the corners */
+    overflow: hidden; /* Prevent map content from spilling out */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #fff; /* Ensure a background color */
+  }

@@ -1,0 +1,19 @@
+h1 {
+  font-size: 2rem;
+  color: #1a73e8; /* Match the theme color */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #444; /* Slightly darker gray */
+  background-color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  width: fit-content;
+  margin: 10px auto;
+}

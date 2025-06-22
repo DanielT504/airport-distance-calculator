@@ -8,7 +8,7 @@ The Airport Distance Calculator is a React-based web application that allows use
 ---
 
 ## **Demo**
-You can access the live application [here](https://heartfelt-peony-d55fb9.netlify.app).
+You can access the live application [here](https://heartfelt-peony-d55fb9.netlify.app). (Maps embed will work until my GCP credits run out)
 
 ---
 
